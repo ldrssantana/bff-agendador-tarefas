@@ -1,13 +1,11 @@
 package com.Leandro.bffagendador.infrastructure.client;
 
 
-
 import com.Leandro.bffagendador.business.dto.in.TarefasDTORequest;
 import com.Leandro.bffagendador.business.dto.out.TarefasDTOResponse;
 import com.Leandro.bffagendador.business.enums.StatusNotificacaoEnum;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
