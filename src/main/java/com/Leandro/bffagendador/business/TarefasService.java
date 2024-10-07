@@ -23,7 +23,7 @@ public class TarefasService {
         return tarefasClient.gravarTarefas(dto, token);
     }
 
-    public List<TarefasDTOResponse> buscaTarefasAgedandasPorPeriodo(LocalDateTime dataInicial, LocalDateTime dataFinal,
+    public List<TarefasDTOResponse> buscaTarefasAgendadasPorPeriodo(LocalDateTime dataInicial, LocalDateTime dataFinal,
                                                                     String token) {
         return tarefasClient.buscaListadeTarefasPorPeriodo(dataInicial, dataFinal, token);
 

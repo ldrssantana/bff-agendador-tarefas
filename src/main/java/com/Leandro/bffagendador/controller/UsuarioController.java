@@ -3,9 +3,11 @@ package com.Leandro.bffagendador.controller;
 
 import com.Leandro.bffagendador.business.UsuarioService;
 import com.Leandro.bffagendador.business.dto.in.EnderecoDTORequest;
-import com.Leandro.bffagendador.business.dto.in.LoginRquestDTO;
+import com.Leandro.bffagendador.business.dto.in.LoginRequestDTO;
+
 import com.Leandro.bffagendador.business.dto.in.TelefoneDTORequest;
-import com.Leandro.bffagendador.business.dto.in.UsuarioDTORquest;
+import com.Leandro.bffagendador.business.dto.in.UsuarioDTORequest;
+
 import com.Leandro.bffagendador.business.dto.out.EnderecoDTOResponse;
 import com.Leandro.bffagendador.business.dto.out.TelefoneDTOResponse;
 import com.Leandro.bffagendador.business.dto.out.UsuarioDTOResponse;
@@ -29,7 +31,7 @@ public class UsuarioController {
     @ApiResponse(responseCode = "200" , description = "Usuario salvo com sucesso")
     @ApiResponse(responseCode = "400" , description = "Usuário já cadastrado")
     @ApiResponse(responseCode = "500" , description = "Erro de servidor")
-    public ResponseEntity<UsuarioDTOResponse> salvaUsuario(@RequestBody UsuarioDTORquest usuarioDTO){
+    public ResponseEntity<UsuarioDTOResponse> salvaUsuario(@RequestBody UsuarioDTORequest usuarioDTO){
         return ResponseEntity.ok(usuarioService.salvaUsuario(usuarioDTO));
 
     }
@@ -40,7 +42,7 @@ public class UsuarioController {
     @ApiResponse(responseCode = "200" , description = "Usuario logado")
     @ApiResponse(responseCode = "401" , description = "Credenciais invalidas")
     @ApiResponse(responseCode = "500" , description = "Erro de servidor")
-    public String login(@RequestBody LoginRquestDTO usuarioDTO){
+    public String login(@RequestBody LoginRequestDTO usuarioDTO){
 
         return usuarioService.loginUsuario(usuarioDTO);
     }
@@ -72,7 +74,7 @@ public class UsuarioController {
     @ApiResponse(responseCode = "200" , description = "Usuario atualizado com sucesso")
     @ApiResponse(responseCode = "404" , description = "Usuário não cadastrado")
     @ApiResponse(responseCode = "500" , description = "Erro de servidor")
-    public ResponseEntity<UsuarioDTOResponse> atualizaDadosUsuario(@RequestBody UsuarioDTORquest dto,
+    public ResponseEntity<UsuarioDTOResponse> atualizaDadosUsuario(@RequestBody UsuarioDTORequest dto,
                                                                    @RequestHeader(name = "authorization", required=false) String token){
 
         return ResponseEntity.ok(usuarioService.atualizaDadosUsuario(token, dto));

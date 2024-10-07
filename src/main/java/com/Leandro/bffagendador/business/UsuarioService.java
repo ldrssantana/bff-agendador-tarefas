@@ -2,9 +2,9 @@ package com.Leandro.bffagendador.business;
 
 
 import com.Leandro.bffagendador.business.dto.in.EnderecoDTORequest;
-import com.Leandro.bffagendador.business.dto.in.LoginRquestDTO;
+import com.Leandro.bffagendador.business.dto.in.LoginRequestDTO;
 import com.Leandro.bffagendador.business.dto.in.TelefoneDTORequest;
-import com.Leandro.bffagendador.business.dto.in.UsuarioDTORquest;
+import com.Leandro.bffagendador.business.dto.in.UsuarioDTORequest;
 import com.Leandro.bffagendador.business.dto.out.EnderecoDTOResponse;
 import com.Leandro.bffagendador.business.dto.out.TelefoneDTOResponse;
 import com.Leandro.bffagendador.business.dto.out.UsuarioDTOResponse;
@@ -19,12 +19,12 @@ public class UsuarioService {
      private final UsuarioClient client;
 
 
-     public UsuarioDTOResponse salvaUsuario(UsuarioDTORquest usuarioDTO) {
+     public UsuarioDTOResponse salvaUsuario(UsuarioDTORequest usuarioDTO) {
 
          return client.salvaUsuario(usuarioDTO);
      }
 
-     public String loginUsuario(LoginRquestDTO dto) {
+     public String loginUsuario(LoginRequestDTO dto) {
           return client.login(dto);
      }
 
@@ -39,7 +39,7 @@ public class UsuarioService {
            client.deletaUsuarioPorEmail(email, token);
      }
 
-     public UsuarioDTOResponse atualizaDadosUsuario(String token , UsuarioDTORquest dto){
+     public UsuarioDTOResponse atualizaDadosUsuario(String token , UsuarioDTORequest dto){
          return client.atualizaDadosUsuario(dto,token);
 
 

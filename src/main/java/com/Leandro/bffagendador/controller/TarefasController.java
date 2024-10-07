@@ -46,7 +46,7 @@ public class TarefasController {
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dataFinal,
             @RequestHeader(name = "authorization", required=false) String token) {
 
-            return ResponseEntity.ok(tarefasService.buscaTarefasAgedandasPorPeriodo(dataInicial, dataFinal, token));
+            return ResponseEntity.ok(tarefasService.buscaTarefasAgendadasPorPeriodo(dataInicial, dataFinal, token));
 
     }
 
@@ -85,7 +85,7 @@ public class TarefasController {
     @Operation(summary = "Altera dados de tarefas  " , description = "Altera dados das  tarefas cadastradas")
     @ApiResponse(responseCode = "200" , description = "Tarefas alteradas com sucesso")
     @ApiResponse(responseCode = "500" , description = "Erro de servidor")
-    public ResponseEntity<TarefasDTOResponse> updateTarefas (@RequestBody TarefasDTOResponse dto,
+    public ResponseEntity<TarefasDTOResponse> updateTarefas (@RequestBody TarefasDTORequest dto,
                                                              @RequestParam("id") String id,
                                                              @RequestHeader(name = "authorization", required=false) String token) {
         return ResponseEntity.ok(tarefasService.updateTarefas(dto, id, token));

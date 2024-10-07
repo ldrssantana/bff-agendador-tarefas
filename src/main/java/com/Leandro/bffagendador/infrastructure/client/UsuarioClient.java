@@ -2,10 +2,9 @@ package com.Leandro.bffagendador.infrastructure.client;
 
 
 import com.Leandro.bffagendador.business.dto.in.EnderecoDTORequest;
-import com.Leandro.bffagendador.business.dto.in.LoginRquestDTO;
+import com.Leandro.bffagendador.business.dto.in.LoginRequestDTO;
 import com.Leandro.bffagendador.business.dto.in.TelefoneDTORequest;
 import com.Leandro.bffagendador.business.dto.in.UsuarioDTORequest;
-
 import com.Leandro.bffagendador.business.dto.out.EnderecoDTOResponse;
 import com.Leandro.bffagendador.business.dto.out.TelefoneDTOResponse;
 import com.Leandro.bffagendador.business.dto.out.UsuarioDTOResponse;
@@ -23,13 +22,13 @@ public interface UsuarioClient {
 
 
     @PostMapping
-    UsuarioDTOResponse salvaUsuario(@RequestBody UsuarioDTOResponse usuarioDTO);
+    UsuarioDTOResponse salvaUsuario(@RequestBody UsuarioDTORequest usuarioDTO);
 
 
 
     //DTO pode ser de Request quando recebe ou Response, quando ele responde esses dados, ele faz esse filtro.
     @PostMapping("/login")
-     String login(@RequestBody LoginRquestDTO usuarioDTO);
+     String login(@RequestBody LoginRequestDTO usuarioDTO);
 
 
 
@@ -56,7 +55,7 @@ public interface UsuarioClient {
 
 
     @PostMapping("/endereco")
-    EnderecoDTOResponse cadastraEndereco(@RequestBody TelefoneDTORequest dto,
+    EnderecoDTOResponse cadastraEndereco(@RequestBody EnderecoDTORequest dto,
                                          @RequestHeader("Authorization") String  token);
 
 
