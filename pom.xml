@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.Leandro</groupId>
-	<artifactId>bff-agendador</artifactId>
+	<artifactId>bff-agendador-tarefas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bff-agendador</name>
 	<description>Demo project for Spring Boot</description>
